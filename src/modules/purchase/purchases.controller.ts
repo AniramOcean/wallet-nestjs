@@ -1,10 +1,10 @@
 import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
 import { InMemoryDBService } from '@nestjs-addons/in-memory-db';
-import { Purchase } from './Purchase';
-import { PurchaseDTO } from './Purchase.dto';
+import { Purchase } from '../../models/Purchase';
+import { PurchaseDTO } from '../../models/Purchase.dto';
 
-@Controller()
-export class AppController {
+@Controller('purchases')
+export class PurchasesController {
   constructor(private purchaseService: InMemoryDBService<Purchase>) {}
 
   @Get()
